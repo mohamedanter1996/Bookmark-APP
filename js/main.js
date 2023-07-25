@@ -85,15 +85,26 @@ else{
 
 function ScanBookmarkNameNumberOfCharacters(nameValue){
 if(nameValue.length>=3){
-    for(var i=0;i<bookmarkList.length;i++){
-        if(nameValue!=bookmarkList[i].bookmarkName){
-            bookmarkNameRule.classList.replace("d-block","d-none");
-            websiteName.classList.remove("input-invalid");
-            websiteName.classList.add("input-valid");
-            bookmarkNameScan=true;
-            return true;
+    if(bookmarkList.length>0){
+        for(var i=0;i<bookmarkList.length;i++){
+            if(nameValue!=bookmarkList[i].bookmarkName){
+                bookmarkNameRule.classList.replace("d-block","d-none");
+                websiteName.classList.remove("input-invalid");
+                websiteName.classList.add("input-valid");
+                bookmarkNameScan=true;
+                return true;
+            }
         }
     }
+
+    else{
+        bookmarkNameRule.classList.replace("d-block","d-none");
+        websiteName.classList.remove("input-invalid");
+        websiteName.classList.add("input-valid");
+        bookmarkNameScan=true;
+        return true;
+    }
+    
     
 }
 else{

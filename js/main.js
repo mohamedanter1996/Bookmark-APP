@@ -63,6 +63,7 @@ function clearBookmarkItemDataAfterAdditionTOBookmarkTable(){
     websiteName.value="";
     websiteURL.value="";
  websiteName.classList.remove("input-valid");
+ websiteURL.classList.remove("input-valid");   
 
 }
 

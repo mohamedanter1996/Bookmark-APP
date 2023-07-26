@@ -62,7 +62,7 @@ function deleteBookmarkItemRow(index){
 function clearBookmarkItemDataAfterAdditionTOBookmarkTable(){
     websiteName.value="";
     websiteURL.value="";
-
+ websiteName.classList.remove("input-valid");
 
 }
 

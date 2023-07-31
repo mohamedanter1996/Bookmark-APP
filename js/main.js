@@ -98,6 +98,15 @@ if(nameValue.length>=3){
                 bookmarkNameScan=true;
                 return true;
             }
+
+            else{
+                bookmarkNameRule.classList.replace("d-none","d-block");
+    websiteName.classList.remove("input-valid");
+    websiteName.classList.add("input-invalid");
+            
+    bookmarkNameScan=false;
+    return false;
+            }
         }
     }
 
@@ -157,14 +166,30 @@ else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink
     websiteURL.value="";
 }
 
+else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink(websiteURL.value)==false)&&(bookmarkNameScan==true)&&(websiteURL.value =="")&&(websiteName.value !="")){
+    sweetAlert("Oops...", "Bookmark link empty!", "error");
+    websiteURL.value="";
+}
+
 else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink(websiteURL.value)==true)&&(bookmarkNameScan==false)&&(websiteURL.value !="")&&(websiteName.value !="")){
     sweetAlert("Oops...", "Bookmark name less than 3 characters!", "error");
+    websiteName.value="";
+}
+
+else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink(websiteURL.value)==true)&&(bookmarkNameScan==false)&&(websiteURL.value !="")&&(websiteName.value =="")){
+    sweetAlert("Oops...", "Bookmark name empty!", "error");
     websiteName.value="";
 }
 
 
 else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink(websiteURL.value)==false)&&(bookmarkNameScan==false)&&(websiteURL.value !="")&&(websiteName.value !="")){
     sweetAlert("Oops...", "Bookmark name less than 3 characters! and Bookmark link invalid", "error");
+    websiteName.value="";
+    websiteURL.value="";
+}
+
+else if((repeatScanBookmarkName(websiteName.value)==false)&&(validateBookmarkLink(websiteURL.value)==false)&&(bookmarkNameScan==false)&&(websiteURL.value !="")&&(websiteName.value !="")){
+    sweetAlert("Oops...", "Bookmark name repeated and Bookmark link invalid", "error");
     websiteName.value="";
     websiteURL.value="";
 }

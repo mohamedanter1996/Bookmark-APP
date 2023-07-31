@@ -162,6 +162,13 @@ else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink
     websiteName.value="";
 }
 
+
+else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink(websiteURL.value)==false)&&(bookmarkNameScan==false)&&(websiteURL.value !="")&&(websiteName.value !="")){
+    sweetAlert("Oops...", "Bookmark name less than 3 characters! and Bookmark link invalid", "error");
+    websiteName.value="";
+    websiteURL.value="";
+}
+
 else{
     sweetAlert("Oops...", "Bookmark name  and Bookmark link empty!", "error");
     websiteName.value="";  

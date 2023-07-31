@@ -3,8 +3,8 @@ var websiteURL=document.getElementById("websiteURL");
 var tableBody=document.getElementById("tableBody");
 var bookmarkNameRule=document.getElementById("bookmarkNameRule");
 var bookmarkLinkRule=document.getElementById("bookmarkLinkRule");
-var bookmarkNameScan=true;
-var bookmarkLinkScan=true;
+var bookmarkNameScan=false;
+var bookmarkLinkScan=false;
 var bookmarkList;
 
 if(localStorage.getItem("BookmarkArray")!=null){
@@ -62,7 +62,11 @@ function deleteBookmarkItemRow(index){
 function clearBookmarkItemDataAfterAdditionTOBookmarkTable(){
     websiteName.value="";
     websiteURL.value="";
-
+    bookmarkNameScan=false;
+ bookmarkLinkScan=false;
+ websiteName.classList.remove("input-valid");
+ websiteURL.classList.remove("input-valid");
+   
 
 }
 

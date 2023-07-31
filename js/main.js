@@ -137,29 +137,29 @@ return validateBookmarkLink(link);
 
 function addBookmarkItemToTable(){
 
-if(repeatScanBookmarkName(websiteName.value)&&validateBookmarkLink(websiteURL.value) &&bookmarkNameScan)
+if(repeatScanBookmarkName(websiteName.value)&&validateBookmarkLink(websiteURL.value) &&bookmarkNameScan&&(websiteURL.value !="")&&(websiteName.value !=""))
    { displayBookmarkArrayInBookmarkTable(addBookmarkArrayTOlocalStorage(addBookmarkObjectToBookmarkArray(addBookmarkInputsToObject(websiteName.value,websiteURL.value))));
     clearBookmarkItemDataAfterAdditionTOBookmarkTable();
    }
 
-else if((repeatScanBookmarkName(websiteName.value)==false)&&(validateBookmarkLink(websiteURL.value)==true)){
+else if((repeatScanBookmarkName(websiteName.value)==false)&&(validateBookmarkLink(websiteURL.value)==true)&&(websiteURL.value !="")&&(websiteName.value !="")){
     sweetAlert("Oops...", "Bookmark name repeated!", "error");
     websiteName.value="";
 
 }
 
-else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink(websiteURL.value)==false)&&bookmarkNameScan==true){
+else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink(websiteURL.value)==false)&&(bookmarkNameScan==true)&&(websiteURL.value !="")&&(websiteName.value !="")){
     sweetAlert("Oops...", "Bookmark link invalid!", "error");
     websiteURL.value="";
 }
 
-else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink(websiteURL.value)==true)&&bookmarkNameScan==false){
+else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink(websiteURL.value)==true)&&(bookmarkNameScan==false)&&(websiteURL.value !="")&&(websiteName.value !="")){
     sweetAlert("Oops...", "Bookmark name less than 3 characters!", "error");
     websiteName.value="";
 }
 
 else{
-    sweetAlert("Oops...", "Bookmark name repeated and Bookmark link invalid!", "error");
+    sweetAlert("Oops...", "Bookmark name repeated and Bookmark link empty!", "error");
     websiteName.value="";  
     websiteURL.value="";
 }

@@ -163,7 +163,7 @@ else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink
 }
 
 else{
-    sweetAlert("Oops...", "Bookmark name repeated and Bookmark link empty!", "error");
+    sweetAlert("Oops...", "Bookmark name  and Bookmark link empty!", "error");
     websiteName.value="";  
     websiteURL.value="";
 }

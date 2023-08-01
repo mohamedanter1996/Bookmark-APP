@@ -188,6 +188,25 @@ else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink
     websiteURL.value="";
 }
 
+else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink(websiteURL.value)==false)&&(bookmarkNameScan==false)&&(websiteURL.value =="")&&(websiteName.value !="")){
+    sweetAlert("Oops...", "Bookmark name less than 3 characters! and Bookmark link empty", "error");
+    websiteName.value="";
+    websiteURL.value="";
+}
+
+else if((repeatScanBookmarkName(websiteName.value)==true)&&(validateBookmarkLink(websiteURL.value)==false)&&(bookmarkNameScan==false)&&(websiteURL.value !="")&&(websiteName.value =="")){
+    sweetAlert("Oops...", "Bookmark name empty and Bookmark link invalid", "error");
+    websiteName.value="";
+    websiteURL.value="";
+}
+
+
+else if((repeatScanBookmarkName(websiteName.value)==false)&&(validateBookmarkLink(websiteURL.value)==false)&&(bookmarkNameScan==false)&&(websiteURL.value =="")&&(websiteName.value !="")){
+    sweetAlert("Oops...", "Bookmark name repeated and Bookmark link empty", "error");
+    websiteName.value="";
+    websiteURL.value="";
+}
+
 else if((repeatScanBookmarkName(websiteName.value)==false)&&(validateBookmarkLink(websiteURL.value)==false)&&(bookmarkNameScan==false)&&(websiteURL.value !="")&&(websiteName.value !="")){
     sweetAlert("Oops...", "Bookmark name repeated and Bookmark link invalid", "error");
     websiteName.value="";
